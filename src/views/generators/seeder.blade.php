@@ -17,6 +17,7 @@ class LaratrustSeeder extends Seeder
         $this->truncateLaratrustTables();
         
         $config = config('laratrust_seeder.role_structure');
+        $roleLevels = config('laratrust_seeder.levels_map');
         $userPermission = config('laratrust_seeder.permission_structure');
         $mapPermission = collect(config('laratrust_seeder.permissions_map'));
 
@@ -25,7 +26,8 @@ class LaratrustSeeder extends Seeder
             $role = \{{ $role }}::create([
                 'name' => $key,
                 'display_name' => ucwords(str_replace("_", " ", $key)),
-                'description' => ucwords(str_replace("_", " ", $key))
+                'description' => ucwords(str_replace("_", " ", $key)),
+                'level' => $roleLevels[$key]
             ]);
 
             $this->command->info('Creating Role '. strtoupper($key));
