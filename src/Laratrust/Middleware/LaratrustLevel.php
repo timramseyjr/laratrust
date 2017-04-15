@@ -38,7 +38,7 @@ class LaratrustLevel
      * @param $method
      * @return mixed
      */
-    public function handle($request, Closure $next, $level, $method = '')
+    public function handle($request, Closure $next, $level, $method = null)
     {
         $passes = false;
         if(!is_null($method)){
@@ -55,9 +55,9 @@ class LaratrustLevel
                     }
                     $passes = $this->auth->user()->level() >= $split[0]  && $this->auth->user()->level() <= $split[1];
                     break;
-                default:
-                    $passes = $this->auth->user()->level() == $level;
             }
+        }else{
+            $passes = $this->auth->user()->level() == $level;
         }
         if ($this->auth->guest() || !$passes) {
             return call_user_func(
