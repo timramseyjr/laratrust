@@ -10,6 +10,7 @@ namespace Laratrust\Middleware;
  * @package Laratrust
  */
 
+use App\Models\defaultmodel;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Config;
@@ -37,7 +38,7 @@ class LaratrustLevel
      * @param $method
      * @return mixed
      */
-    public function handle($request, Closure $next, $level, $method = null)
+    public function handle($request, Closure $next, $level, $method = '')
     {
         $passes = false;
         if(!is_null($method)){
@@ -49,11 +50,13 @@ class LaratrustLevel
                     $passes = $this->auth->user()->level() < $level;
                     break;
                 case 'BETWEEN':
-                    if(strpos($level,',') === false || count($split = explode(',',$level)) < 2){
+                    if(strpos($level,'^') === false || count($split = explode('^',$level)) < 2){
                         break;
                     }
                     $passes = $this->auth->user()->level() >= $split[0]  && $this->auth->user()->level() <= $split[1];
                     break;
+                default:
+                    $passes = $this->auth->user()->level() == $level;
             }
         }
         if ($this->auth->guest() || !$passes) {

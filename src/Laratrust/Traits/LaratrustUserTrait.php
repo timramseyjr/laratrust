@@ -581,7 +581,7 @@ trait LaratrustUserTrait
      */
     public function hasLevelBetween($levels)
     {
-        if(strpos($levels,',') === false || count($split = explode(',',$levels)) < 2){
+        if(strpos($levels,'^') === false || count($split = explode('^',$levels)) < 2){
             return false;
         }
         return $this->level() >= $split[0]  && $this->level() <= $split[1];
