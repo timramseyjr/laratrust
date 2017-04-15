@@ -551,7 +551,7 @@ trait LaratrustUserTrait
      */
     public function level()
     {
-        return ($role = $this->roles()->orderBy('level', 'desc')->first()) ? $role->level : 0;
+        return ($role = $this->roles()->orderBy('level', Config::get('laratrust.level_sort'))->first()) ? $role->level : 0;
     }
 
     /**
