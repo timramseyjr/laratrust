@@ -43,11 +43,11 @@ class LaratrustLevel
         $passes = false;
         if(!is_null($method)){
             switch($method){
-                case 'GT':
-                    $passes = $this->auth->user()->level() > $level;
+                case '>=':
+                    $passes = $this->auth->user()->level() >= $level;
                     break;
-                case 'LT':
-                    $passes = $this->auth->user()->level() < $level;
+                case '<=':
+                    $passes = $this->auth->user()->level() <= $level;
                     break;
                 case 'BETWEEN':
                     if(strpos($level,'^') === false || count($split = explode('^',$level)) < 2){

@@ -561,7 +561,7 @@ trait LaratrustUserTrait
      */
     public function hasLevelOrGreater($level)
     {
-        return $level >= $this->level() ? true : false;
+        return $level >= $this->level();
     }
 
     /**
@@ -571,7 +571,7 @@ trait LaratrustUserTrait
      */
     public function hasLevelOrLesser($level)
     {
-        return $level <= $this->level() ? true : false;
+        return $level <= $this->level();
     }
 
     /**
