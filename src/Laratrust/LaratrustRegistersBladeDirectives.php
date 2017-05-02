@@ -63,9 +63,9 @@ class LaratrustRegistersBladeDirectives
             return "<?php if (app('laratrust')->hasLevelOrGreater({$expression})) : ?>";
         });
 
-        // Call to Laratrust::hasLevelOrLesser
-        Blade::directive('hasLevelOrLesser', function ($expression) {
-            return "<?php if (app('laratrust')->hasLevelOrLesser({$expression})) : ?>";
+        // Call to Laratrust::hasLevelOrLess
+        Blade::directive('hasLevelOrLess', function ($expression) {
+            return "<?php if (app('laratrust')->hasLevelOrLess({$expression})) : ?>";
         });
 
         // Call to Laratrust::hasLevelBetween
@@ -110,9 +110,9 @@ class LaratrustRegistersBladeDirectives
             return "<?php if (app('laratrust')->hasLevelOrGreater{$expression}): ?>";
         });
 
-        // Call to Laratrust::hasLevelOrLesser
-        Blade::directive('hasLevelOrLesser', function ($expression) {
-            return "<?php if (app('laratrust')->hasLevelOrLesser{$expression}): ?>";
+        // Call to Laratrust::hasLevelOrLess
+        Blade::directive('hasLevelOrLess', function ($expression) {
+            return "<?php if (app('laratrust')->hasLevelOrLess{$expression}): ?>";
         });
 
         // Call to Laratrust::hasLevelBetween
@@ -144,7 +144,7 @@ class LaratrustRegistersBladeDirectives
         });
 
         Blade::directive('endlevel', function () {
-            return "<?php endif; // app('laratrust')->hasLevelOrGreater or hasLevelOrLesser or hasLevelBetween ?>";
+            return "<?php endif; // app('laratrust')->hasLevelOrGreater or hasLevelOrLess or hasLevelBetween ?>";
         });
     }
 }

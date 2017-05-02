@@ -156,10 +156,10 @@ class Laratrust
      * @param  int $level
      * @return boolean
      */
-    public function hasLevelOrLesser($level)
+    public function hasLevelOrLess($level)
     {
         if ($user = $this->user()) {
-            return $user->hasLevelOrLesser($level);
+            return $user->hasLevelOrLess($level);
         }
         return false;
     }

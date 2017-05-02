@@ -22,3 +22,8 @@ Installation
     'role' => \Laratrust\Middleware\LaratrustRole::class,
     'permission' => \Laratrust\Middleware\LaratrustPermission::class,
     'ability' => \Laratrust\Middleware\LaratrustAbility::class,
+
+.. NOTE::
+    If you want to use the optional levels hierarchical functionality, add one additional line to ``routeMiddleware`` array.
+
+    'level' => \Laratrust\Middleware\LaratrustLevel::class

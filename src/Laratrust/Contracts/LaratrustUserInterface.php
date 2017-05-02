@@ -183,7 +183,7 @@ interface LaratrustUserInterface
      * @param  int $level
      * @return boolean
      */
-    public function hasLevelOrLesser($level);
+    public function hasLevelOrLess($level);
 
     /**
      * Checks if the user has a level between supplied

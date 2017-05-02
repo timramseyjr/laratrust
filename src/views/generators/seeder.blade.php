@@ -3,6 +3,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Schema\Blueprint;
 
 class LaratrustSeeder extends Seeder
 {
@@ -15,9 +16,11 @@ class LaratrustSeeder extends Seeder
     {
         $this->command->info('Truncating User, Role and Permission tables');
         $this->truncateLaratrustTables();
-        
+        $hasLevels = Schema::hasColumn(config('laratrust.roles_table'), 'level');
         $config = config('laratrust_seeder.role_structure');
-        $roleLevels = config('laratrust_seeder.levels_map');
+        if($hasLevels){
+            $roleLevels = config('laratrust_seeder.levels_map');
+        }
         $userPermission = config('laratrust_seeder.permission_structure');
         $mapPermission = collect(config('laratrust_seeder.permissions_map'));
 
@@ -26,10 +29,11 @@ class LaratrustSeeder extends Seeder
             $role = \{{ $role }}::create([
                 'name' => $key,
                 'display_name' => ucwords(str_replace("_", " ", $key)),
-                'description' => ucwords(str_replace("_", " ", $key)),
-                'level' => $roleLevels[$key]
+                'description' => ucwords(str_replace("_", " ", $key))
             ]);
-
+            if($hasLevels){
+                $role->level = $roleLevels[$key];
+            }
             $this->command->info('Creating Role '. strtoupper($key));
 
             // Reading role permission modules
