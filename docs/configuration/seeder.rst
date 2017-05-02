@@ -90,3 +90,20 @@ Permissions
 -----------
 
 In case that you do not want to use the ``c,r,u,d`` permissions, in the ``config/laratrust_seeder.php`` there the ``permissions_map`` where you can change the permissions mapping.
+
+Levels
+------
+
+If you are using the optional Levels hierarchical trait, you can also map the default levels of your roles in the ``levels_map`` portion of the array.
+
+.. code-block:: php
+
+    return [
+       'levels_map' => [
+           'superadministrator' => 1,
+           'administrator' => 2,
+           'user' => 3
+       ]
+    ];
+
+Since the Levels trait allows you to see if the level are less than, greater than, or between you can level in ascending or descending order.
