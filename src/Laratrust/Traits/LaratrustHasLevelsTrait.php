@@ -11,26 +11,9 @@ namespace Laratrust\Traits;
  */
 
 use Illuminate\Support\Facades\Config;
-use InvalidArgumentException;
 
 trait LaratrustHasLevelsTrait
 {
-    /**
-     * Many-to-Many relations with Role.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function roles()
-    {
-        return $this->morphToMany(
-            Config::get('laratrust.role'),
-            'user',
-            Config::get('laratrust.role_user_table'),
-            Config::get('laratrust.user_foreign_key'),
-            Config::get('laratrust.role_foreign_key')
-        );
-    }
-
     /**
      * Get role level of a user.
      *
@@ -56,7 +39,7 @@ trait LaratrustHasLevelsTrait
      * @param  int $level
      * @return boolean
      */
-    public function hasLevelOrLesser($level)
+    public function hasLevelOrLess($level)
     {
         return $level <= $this->level();
     }
