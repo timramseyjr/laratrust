@@ -543,47 +543,4 @@ trait LaratrustUserTrait
             'getIdFor function only accepts an integer, a Model object or an array with an "id" key'
         );
     }
-
-    /**
-     * Get role level of a user.
-     *
-     * @return int
-     */
-    public function level()
-    {
-        return ($role = $this->roles()->orderBy('level', Config::get('laratrust.level_sort'))->first()) ? $role->level : 0;
-    }
-
-    /**
-     * Checks if a user has supplied level or higher
-     * @param  int $level
-     * @return boolean
-     */
-    public function hasLevelOrGreater($level)
-    {
-        return $level >= $this->level();
-    }
-
-    /**
-     * Checks if a user has supplied level or lower
-     * @param  int $level
-     * @return boolean
-     */
-    public function hasLevelOrLesser($level)
-    {
-        return $level <= $this->level();
-    }
-
-    /**
-     * Checks if a user has a level between the two supplied
-     * @param  string $levels
-     * @return boolean
-     */
-    public function hasLevelBetween($levels)
-    {
-        if(strpos($levels,'^') === false || count($split = explode('^',$levels)) < 2){
-            return false;
-        }
-        return $this->level() >= $split[0]  && $this->level() <= $split[1];
-    }
 }
