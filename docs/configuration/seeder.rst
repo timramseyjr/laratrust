@@ -111,4 +111,5 @@ Since the Levels trait allows you to see if the level are less than, greater tha
 There are two additional configuration values in the laratrust config file:
 
     ``level_sort`` - Used to determine which way to sort level
+
     ``level_default_value`` - Default value of level column on roles table
