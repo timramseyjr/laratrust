@@ -1,3 +1,5 @@
+.. _user-model:
+
 User
 ====
 
@@ -17,8 +19,6 @@ Next, use the ``LaratrustUserTrait`` trait in your existing user models. For exa
     }
 
 This will enable the relation with ``Role`` and ``Permission``, and add the following methods ``roles()``, ``hasRole($name)``, ``hasPermission($permission)``, ``isAbleTo($permission)``, ``can($permission)``, and ``ability($roles, $permissions, $options)`` within your ``User`` model.
-
-.. _user-model:
 
 .. NOTE::
     Optional: If you would like to use the hierarchical level functionality, then please add the additional Trait to your user model.
