@@ -26,5 +26,6 @@ Installation
 .. NOTE::
     If you want to use the optional hierarchical levels functionality, add one additional line to the ``routeMiddleware`` array.
 
+
 .. code-block:: php
     'level' => \Laratrust\Middleware\LaratrustLevel::class

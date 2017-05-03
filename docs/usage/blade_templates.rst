@@ -49,4 +49,4 @@ Three directives are available for use within your Blade templates. What you giv
     @hasLevelBetween('1^3')
         <p>This is visible to users with role level between 1 and 3. Gets translated to
         \Laratrust::hasLevelBetween('1^3')</p>
-    @endrole
+    @endlevel

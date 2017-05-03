@@ -110,6 +110,5 @@ Since the Levels trait allows you to see if the level are less than, greater tha
 
 There are two additional configuration values in the laratrust config file:
 
-    ``level_sort`` - Used to determine which way to sort level(should be 'desc' is Highest level starts at 1 or 'asc' if you have done the opposite with your leveling)
-
+    ``level_sort`` - Used to determine which way to sort level
     ``level_default_value`` - Default value of level column on roles table
