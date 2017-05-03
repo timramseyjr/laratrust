@@ -24,6 +24,7 @@ Installation
     'ability' => \Laratrust\Middleware\LaratrustAbility::class,
 
 .. NOTE::
-    If you want to use the optional levels hierarchical functionality, add one additional line to ``routeMiddleware`` array.
+    If you want to use the optional hierarchical levels functionality, add one additional line to the ``routeMiddleware`` array.
+
 
     'level' => \Laratrust\Middleware\LaratrustLevel::class

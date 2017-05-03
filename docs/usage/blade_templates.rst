@@ -32,7 +32,8 @@ Three directives are available for use within your Blade templates. What you giv
     @endOwns
 
 .. NOTE::
-    If you are using the levels hierarchical functionality then you have access to these additional blade directives.
+    If you are using the levels hierarchical functionality then you have access to the following blade directives.
+
 
 .. code-block:: php
     @hasLevelOrGreater(1)

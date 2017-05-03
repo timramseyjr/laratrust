@@ -139,7 +139,7 @@ If you have added the ``LaratrustHasLevelsTrait`` to your user model and have ru
    $user->hasLevelOrLess(3);   // true
    $user->hasLevelBetween('1^3');   // true
 
-Depending on how you set the ``level_sort`` in the config will determine which direction of levels you would check.
+Depending on how you set the ``level_sort`` in the config will determine which direction you test for levels.
 
 Checking for Roles & Permissions
 --------------------------------
