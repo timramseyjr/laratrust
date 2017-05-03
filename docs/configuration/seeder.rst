@@ -106,7 +106,7 @@ If you are using the optional hierarchical Levels trait, you can also map the de
        ]
     ];
 
-Since the Levels trait allows you to see if the level are less than, greater than, or between, you can set set the level in ascending or descending order.
+Since the Levels trait allows you to check if the users level is less than, greater than, or between, you can set set the level in ascending or descending order.
 
 There are two additional configuration values in the laratrust config file:
 
