@@ -91,10 +91,9 @@ Permissions
 
 In case that you do not want to use the ``c,r,u,d`` permissions, in the ``config/laratrust_seeder.php`` there the ``permissions_map`` where you can change the permissions mapping.
 
-Levels
-------
+.. NOTE::
 
-If you are using the optional hierarchical Levels trait, you can also map the default levels of your roles in the ``levels_map`` portion of the array.
+    If you are using the optional hierarchical Levels trait, you can also map the default levels of your roles in the ``levels_map`` portion of the array.
 
 .. code-block:: php
 
