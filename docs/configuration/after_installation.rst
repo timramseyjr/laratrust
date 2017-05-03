@@ -49,7 +49,7 @@ And then do not forget to run::
     composer dump-autoload
 
 .. NOTE::
-    If you plan on using the hierarchical Levels functionality, you will need to add the optional trait to your user model that is outlined in the :ref:`user-model` part of the documentation.
+    If you plan on using the hierarchical Levels functionality, you will need to add the optional trait to your user model that is outlined in the :doc:`configuration/models/user` part of the documentation.
 
 .. IMPORTANT::
     **If you did the steps above you are done with the configuration, if not, please read and follow the whole configuration process**

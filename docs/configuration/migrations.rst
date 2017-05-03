@@ -10,6 +10,7 @@ It will generate the ``<timestamp>_laratrust_setup_tables.php`` migration.
 .. NOTE::
     If you would like to use the additional hierarchical level functionality, you must run ``php artisan laratrust:addlevels`` to create the migration that will add the additional ``level`` column to the roles table before running ``php artisan migrate``.
 
+
 You may now run it with the artisan migrate command::
     php artisan migrate
 
