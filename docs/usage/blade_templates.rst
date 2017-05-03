@@ -32,10 +32,12 @@ Three directives are available for use within your Blade templates. What you giv
     @endOwns
 
 .. NOTE::
+
     If you are using the levels hierarchical functionality then you have access to the following blade directives.
 
 
 .. code-block:: php
+
     @hasLevelOrGreater(1)
         <p>This is visible to users with role level >= 1. Gets translated to
         \Laratrust::hasLevelOrGreater(1)</p>
