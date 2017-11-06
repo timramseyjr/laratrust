@@ -26,11 +26,15 @@ class LaratrustSeeder extends Seeder
 
         foreach ($config as $key => $modules) {
             // Create a new role
-            $role = \{{ $role }}::create([
+            $roleData = [
                 'name' => $key,
                 'display_name' => ucwords(str_replace("_", " ", $key)),
                 'description' => ucwords(str_replace("_", " ", $key))
-            ]);
+            ];
+            if($hasLevels){
+                $roleData['level'] = $roleLevels[$key];
+            }
+            $role = \{{ $role }}::create($roleData);
             if($hasLevels){
                 $role->level = $roleLevels[$key];
             }

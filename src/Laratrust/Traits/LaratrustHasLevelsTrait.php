@@ -31,7 +31,7 @@ trait LaratrustHasLevelsTrait
      */
     public function hasLevelOrGreater($level)
     {
-        return $level >= $this->level();
+        return $this->level() >= $level;
     }
 
     /**
@@ -41,7 +41,7 @@ trait LaratrustHasLevelsTrait
      */
     public function hasLevelOrLess($level)
     {
-        return $level <= $this->level();
+        return $this->level() <= $level;
     }
 
     /**
@@ -55,5 +55,29 @@ trait LaratrustHasLevelsTrait
             return false;
         }
         return $this->level() >= $split[0]  && $this->level() <= $split[1];
+    }
+    /**
+     * This scope allows to retrive users with an specific level
+     * @param  Illuminate\Database\Eloquent\Builder $query
+     * @param  int $level
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWhereLevelGT($query, $level = 1)
+    {
+        return $query->whereHas('roles', function ($roleQuery) use ($level) {
+            $roleQuery->where('level', '>=', $level);
+        });
+    }
+    /**
+     * This scope allows to retrive users with an specific level
+     * @param  Illuminate\Database\Eloquent\Builder $query
+     * @param  int $level
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWhereLevelLT($query, $level = 1)
+    {
+        return $query->whereHas('roles', function ($roleQuery) use ($level) {
+            $roleQuery->where('level', '<=', $level);
+        });
     }
 }
